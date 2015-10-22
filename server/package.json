@@ -1,0 +1,29 @@
+{
+  "name": "Tubular-Backend",
+  "version": "0.0.1",
+  "description": "A very tubular project. Backend application",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ballantyno/Tubular"
+  },
+  "keywords": [
+    "Tubular.",
+    "Tube.",
+    "Ular."
+  ],
+  "author": "Andrew Ballantyne",
+  "contributors": [
+    {
+      "name": "Daniel Bruce",
+      "email": "dbruce1126@gmail.com."
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ballantyno/Tubular/issues"
+  }
+}
