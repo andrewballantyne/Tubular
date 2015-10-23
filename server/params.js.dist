@@ -1,0 +1,12 @@
+'use strict';
+
+/**
+ * N.B. Copy this file to /server/params.js and edit the required values.
+ */
+module.exports = {
+  oauth: {
+    client_id: 'OAUTH_CLIENT_ID',
+    client_secret: 'OAUTH_CLIENT_SECRET',
+    redirect_uri: 'OAUTH_REDIRECT_URI' // should end with "/oauth_redirect"
+  }
+};
