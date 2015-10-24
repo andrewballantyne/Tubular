@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
+var oauth = require('../modules/oauth');
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   var authorizationUri = 'https://accounts.google.com/o/oauth2/auth?' +
@@ -12,6 +14,11 @@ router.get('/', function(req, res, next) {
     params: req.app.locals.params,
     authorizationUri: authorizationUri
   });
+});
+
+router.use('/oauth_redirect', oauth.getOauthUserDetails);
+router.get('/oauth_redirect', function(req, res, next) {
+    res.send('Done');
 });
 
 module.exports = router;
