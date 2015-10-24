@@ -1,0 +1,22 @@
+{
+  "name": "Tubular-Frontend",
+  "version": "0.0.1",
+  "homepage": "https://github.com/ballantyno/Tubular",
+  "authors": [
+    "Andrew Ballantyne <andrew_ballantyne@rogers.com>"
+  ],
+  "description": "A very tubular project. Frontend application",
+  "main": "index.html",
+  "keywords": [
+    "Tublar.",
+    "Tube.",
+    "Ular."
+  ],
+  "dependencies": {
+    "mithril": "0.2.0",
+    "jquery": "2.0.3",
+    "bootstrap": "3.3.5"
+  },
+  "license": "MIT",
+  "private": true
+}
