@@ -16,7 +16,8 @@ router.get('/', function(req, res, next) {
   });
 });
 
-router.use('/oauth_redirect', oauth.getOauthUserDetails);
+router.use('/oauth_redirect', oauth.getAccessToken);
+router.use('/oauth_redirect', oauth.getUserDetails);
 router.get('/oauth_redirect', function(req, res, next) {
     res.send('Done');
 });
