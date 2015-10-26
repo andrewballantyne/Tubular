@@ -2,6 +2,7 @@
 
 var https = require('https');
 var formEncoder = require('form-urlencoded');
+var mongoose = require('mongoose');
 
 module.exports = {
     getAccessToken: function(req, res, next) {
@@ -69,11 +70,20 @@ module.exports = {
             });
             res.on('end', function() {
                 try {
-                    req.app.locals.current_user = JSON.parse(responseData.join(''));
-                    console.log('User ', req.app.locals.current_user);
+                    var userSchema = new mongoose.Schema({ any: {} }, {strict: false});
+                    var User = mongoose.model('User', userSchema);
+                    var currentUser = new User(JSON.parse(responseData.join('')));
+                    currentUser.save(function(err, user) {
+                        if (err) {
+                            console.log('Error saving user to database', err);
+                            next();
+                        } else {
+                            req.app.locals.currentUser = user;
+                        }
+                        next();
+                    });
                 } catch (e) {
-                    console.log('Received invalid JSON: ', responseData.join(''));
-                } finally {
+                    console.log('Exception thrown: ', e);
                     next();
                 }
             });

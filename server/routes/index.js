@@ -19,7 +19,13 @@ router.get('/', function(req, res, next) {
 router.use('/oauth_redirect', oauth.getAccessToken);
 router.use('/oauth_redirect', oauth.getUserDetails);
 router.get('/oauth_redirect', function(req, res, next) {
-    res.send('Done');
+    if (req.app.locals.currentUser) {
+        res.send(
+            '<pre>' + JSON.stringify(req.app.locals.currentUser, null, 2) + '</pre>'
+        );
+        return;
+    }
+    res.send('Could not retrieve current user. Check the logs.');
 });
 
 module.exports = router;
