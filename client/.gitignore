@@ -1,3 +1,4 @@
 # See Gruntfile.js >> '$ grunt' to create
+.tscache
 dev/bin
 bower_components

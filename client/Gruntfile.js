@@ -18,18 +18,22 @@ module.exports = function (grunt) {
           'bower_components/bootstrap/dist/css/bootstrap.min.css'
         ],
         dest: 'dev/bin/external.min.css'
-      },
-      binJS: {
-        src: [
-          'dev/src/**/*.js'
-        ],
-        dest: 'dev/bin/lib.js'
+      }
+    },
+    ts: {
+      dev: {
+        src: 'dev/src/ref.d.ts',
+        out: 'dev/bin/lib.js',
+        target: 'ES5',
+        sourceMap: true
       }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-ts');
 
-  grunt.registerTask('default', ['concat:externalJS', 'concat:externalCSS', 'concat:binJS']);
-  grunt.registerTask('dev', ['concat:binJS']);
+  grunt.registerTask('default', ['external', 'dev']);
+  grunt.registerTask('external', ['concat:externalJS', 'concat:externalCSS']);
+  grunt.registerTask('dev', ['ts:dev']);
 };
