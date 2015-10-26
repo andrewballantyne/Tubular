@@ -1,0 +1,13 @@
+.navPane {
+  background-color: #ccc;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  margin-top: 10px;
+  min-height: 0; }
+  .navPane .siteTitle {
+    font-size: 200%;
+    font-weight: bold;
+    padding: 5px 10px;
+    vertical-align: middle; }
+  .navPane a.btn-link:not(:last-child) {
+    border-right: 1px solid #aaa; }

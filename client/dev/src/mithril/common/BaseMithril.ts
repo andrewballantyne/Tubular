@@ -5,18 +5,17 @@
  */
 class BaseMithril {
   constructor () {
-
   }
 
+  /** @abstract **/
   public view():MithrilVirtualElement {
-    return null;
+    throw new Error("Abstract BaseMithril.view()");
   }
 
   public controller():void {
-
   }
 
+  /** @deprecated - may not be necessary **/
   public vm():void {
-
   }
 }
